@@ -1,7 +1,20 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript", "plugin:prettier/recommended"],
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "plugin:prettier/recommended",
+    "plugin:storybook/recommended"
+  ],
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": "error"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.{js,ts,jsx,tsx}", "**/*.spec.{js,ts,jsx,tsx}"],
+      "env": {
+        "jest": true // Jest 환경 설정 추가
+      }
+    }
+  ]
 }
